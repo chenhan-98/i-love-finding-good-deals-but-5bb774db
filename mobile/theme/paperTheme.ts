@@ -7,22 +7,22 @@ export const paperTheme: MD3Theme = {
     ...MD3LightTheme.colors,
 
     // Primary
-    primary: '#2563EB',
+    primary: '#1D4ED8',
     onPrimary: '#FFFFFF',
     primaryContainer: '#DBEAFE',
-    onPrimaryContainer: '#1E3A5F',
+    onPrimaryContainer: '#1E3A8A',
 
     // Secondary
-    secondary: '#0F766E',
+    secondary: '#2563EB',
     onSecondary: '#FFFFFF',
-    secondaryContainer: '#CCFBF1',
-    onSecondaryContainer: '#134E4A',
+    secondaryContainer: '#DBEAFE',
+    onSecondaryContainer: '#1E40AF',
 
-    // Tertiary (uses secondary tones by default)
-    tertiary: '#7C3AED',
+    // Tertiary
+    tertiary: '#3B82F6',
     onTertiary: '#FFFFFF',
-    tertiaryContainer: '#EDE9FE',
-    onTertiaryContainer: '#4C1D95',
+    tertiaryContainer: '#BFDBFE',
+    onTertiaryContainer: '#1E3A8A',
 
     // Error
     error: '#DC2626',
@@ -31,22 +31,22 @@ export const paperTheme: MD3Theme = {
     onErrorContainer: '#991B1B',
 
     // Surfaces
-    background: '#F8FAFC',
+    background: '#F8FAFF',
     onBackground: '#0F172A',
     surface: '#FFFFFF',
     onSurface: '#0F172A',
-    surfaceVariant: '#E2E8F0',
-    onSurfaceVariant: '#475569',
+    surfaceVariant: '#DBEAFE',
+    onSurfaceVariant: '#334155',
     surfaceDisabled: 'rgba(15, 23, 42, 0.12)',
     onSurfaceDisabled: 'rgba(15, 23, 42, 0.38)',
 
     // Borders
-    outline: '#CBD5E1',
-    outlineVariant: '#E2E8F0',
+    outline: '#93C5FD',
+    outlineVariant: '#BFDBFE',
 
     // Inverse (Snackbar, tooltips)
     inverseSurface: '#1E293B',
-    inverseOnSurface: '#F1F5F9',
+    inverseOnSurface: '#F8FAFC',
     inversePrimary: '#93C5FD',
 
     // Misc
@@ -56,11 +56,11 @@ export const paperTheme: MD3Theme = {
     // Elevation tints (Paper uses these for elevated surfaces)
     elevation: {
       level0: 'transparent',
-      level1: '#F8FAFC',
-      level2: '#F1F5F9',
-      level3: '#E2E8F0',
-      level4: '#CBD5E1',
-      level5: '#94A3B8',
+      level1: '#EFF6FF',
+      level2: '#DBEAFE',
+      level3: '#BFDBFE',
+      level4: '#93C5FD',
+      level5: '#60A5FA',
     },
   },
 };
