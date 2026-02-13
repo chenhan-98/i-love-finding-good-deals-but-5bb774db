@@ -28,8 +28,8 @@ export function DealCard({
           <Chip compact icon="store" style={styles.chip}>
             {deal.marketplace}
           </Chip>
-          <Chip compact style={[styles.discountChip, { backgroundColor: '#DCFCE7' }]}>
-            <Text>{deal.discount_percent}% OFF</Text>
+          <Chip compact style={[styles.discountChip, { backgroundColor: theme.colors.surfaceVariant }]}>
+            <Text style={{ color: theme.colors.onSurface }}>{deal.discount_percent}% OFF</Text>
           </Chip>
         </View>
 
