@@ -65,7 +65,7 @@ export default function DiscoverScreen() {
       setLoading(true);
       await Promise.all([loadCategories(), loadDeals(), loadFavorites()]);
     } catch {
-      setSnackbarText('Unable to load deals right now.');
+      setSnackbarText('Oops 😅 Unable to load deals right now.');
     } finally {
       setLoading(false);
     }
@@ -78,7 +78,7 @@ export default function DiscoverScreen() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      loadDeals().catch(() => setSnackbarText('Failed to update search results.'));
+      loadDeals().catch(() => setSnackbarText('Search update hiccup 🔎. Please try again.'));
     }, 280);
 
     return () => clearTimeout(timeout);
@@ -90,9 +90,9 @@ export default function DiscoverScreen() {
       setLoading(true);
       await refreshDeals();
       await loadDeals();
-      setSnackbarText('Fresh deals pulled from marketplaces.');
+      setSnackbarText('Fresh deals are in 🎉');
     } catch {
-      setSnackbarText('Could not refresh deals right now.');
+      setSnackbarText('Could not refresh deals right now 😕');
     } finally {
       setLoading(false);
     }
@@ -107,14 +107,14 @@ export default function DiscoverScreen() {
           updated.delete(deal.id);
           return updated;
         });
-        setSnackbarText('Removed from saved deals.');
+        setSnackbarText('Removed from saved deals 🗑️');
       } else {
         await addFavorite(deal.id);
         setFavoriteIds((prev) => new Set([...prev, deal.id]));
-        setSnackbarText('Deal saved to favorites.');
+        setSnackbarText('Deal saved to favorites 💚');
       }
     } catch {
-      setSnackbarText('Unable to update favorites.');
+      setSnackbarText('Unable to update favorites right now 😬');
     }
   };
 
@@ -125,7 +125,7 @@ export default function DiscoverScreen() {
       await Share.share({ message });
       await recordShare({ deal_id: deal.id, channel: 'native_share', message });
     } catch {
-      setSnackbarText('Share failed. Try again.');
+      setSnackbarText('Share failed 📤. Try again.');
     }
   };
 
@@ -133,7 +133,7 @@ export default function DiscoverScreen() {
     try {
       await Linking.openURL(deal.product_url);
     } catch {
-      setSnackbarText('Unable to open the deal link.');
+      setSnackbarText('Unable to open the deal link 🔗');
     }
   };
 
@@ -141,10 +141,10 @@ export default function DiscoverScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]} edges={['top']}>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <Text variant="headlineMedium" style={styles.heroTitle}>
-          Deal Radar
+          Deal Radar 🛍️
         </Text>
         <Text variant="bodyMedium" style={[styles.heroSubtitle, { color: theme.colors.onSurfaceVariant }]}>
-          Scan Walmart, Target, and Amazon in one stream. Filter smarter, save faster.
+          Scan Walmart, Target, and Amazon in one stream. Filter smarter, save faster ✨
         </Text>
 
         <Searchbar
@@ -156,7 +156,7 @@ export default function DiscoverScreen() {
 
         <View style={styles.section}>
           <Text variant="titleSmall" style={styles.sectionTitle}>
-            Marketplace
+            Marketplace 🏬
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalFilters}>
             <View style={styles.chipRow}>
@@ -176,7 +176,7 @@ export default function DiscoverScreen() {
 
         <View style={styles.section}>
           <Text variant="titleSmall" style={styles.sectionTitle}>
-            Category
+            Category 🧩
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalFilters}>
             <View style={styles.chipRow}>
@@ -196,7 +196,7 @@ export default function DiscoverScreen() {
 
         <View style={styles.section}>
           <Text variant="titleSmall" style={styles.sectionTitle}>
-            Min Discount
+            Min Discount 💸
           </Text>
           <View style={styles.chipRow}>
             {discountLevels.map((level) => (
@@ -208,7 +208,7 @@ export default function DiscoverScreen() {
         </View>
 
         <Button mode="contained" onPress={onRefreshDeals} style={styles.refreshButton}>
-          <Text>Refresh Marketplace Deals</Text>
+          <Text>Refresh Marketplace Deals 🔄</Text>
         </Button>
 
         {loading ? (

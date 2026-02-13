@@ -29,7 +29,7 @@ export function DealCard({
             {deal.marketplace}
           </Chip>
           <Chip compact style={[styles.discountChip, { backgroundColor: theme.colors.surfaceVariant }]}>
-            <Text style={{ color: theme.colors.onSurface }}>{deal.discount_percent}% OFF</Text>
+            <Text style={{ color: theme.colors.onSurface }}>🔥 {deal.discount_percent}% OFF</Text>
           </Chip>
         </View>
 
@@ -51,13 +51,13 @@ export function DealCard({
 
       <Card.Actions style={styles.actions}>
         <Button mode={isFavorite ? 'contained' : 'outlined'} onPress={() => onToggleFavorite(deal)}>
-          {isFavorite ? 'Saved' : 'Save'}
+          {isFavorite ? 'Saved 💚' : 'Save 🤍'}
         </Button>
         <Button mode="text" onPress={() => onShare(deal)}>
-          <Text>Share</Text>
+          <Text>Share 📤</Text>
         </Button>
         <Pressable style={styles.linkButton} onPress={() => onOpen(deal)}>
-          <Text style={{ color: theme.colors.secondary }}>Open</Text>
+          <Text style={{ color: theme.colors.secondary }}>Open 🔗</Text>
         </Pressable>
       </Card.Actions>
     </Card>
