@@ -28,7 +28,7 @@ function createAppifexConfig(): AppifexConfig {
     /** Links this app to an Appifex project */
     projectId: '5bb774db-183c-4bef-99cd-d03cc97e7518',
     /** Links this deployment to a development session */
-    sessionId: '599c38f9-58a0-4f5c-b48d-82a8910b82a2',
+    sessionId: 'c1803cc1-8644-4137-aca3-a06bcd6b6e8d',
     /** Sentry DSN for centralized error monitoring */
     sentryDsn: '',
     /** Appifex backend URL for telemetry */

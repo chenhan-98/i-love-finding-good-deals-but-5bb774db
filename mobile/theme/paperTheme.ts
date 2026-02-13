@@ -7,22 +7,22 @@ export const paperTheme: MD3Theme = {
     ...MD3LightTheme.colors,
 
     // Primary
-    primary: '#1D4ED8',
+    primary: '#DB2777',
     onPrimary: '#FFFFFF',
-    primaryContainer: '#DBEAFE',
-    onPrimaryContainer: '#1E3A8A',
+    primaryContainer: '#FCE7F3',
+    onPrimaryContainer: '#831843',
 
     // Secondary
-    secondary: '#2563EB',
+    secondary: '#EC4899',
     onSecondary: '#FFFFFF',
-    secondaryContainer: '#DBEAFE',
-    onSecondaryContainer: '#1E40AF',
+    secondaryContainer: '#FBCFE8',
+    onSecondaryContainer: '#9D174D',
 
     // Tertiary
-    tertiary: '#3B82F6',
+    tertiary: '#F472B6',
     onTertiary: '#FFFFFF',
-    tertiaryContainer: '#BFDBFE',
-    onTertiaryContainer: '#1E3A8A',
+    tertiaryContainer: '#F9A8D4',
+    onTertiaryContainer: '#831843',
 
     // Error
     error: '#DC2626',
@@ -31,23 +31,23 @@ export const paperTheme: MD3Theme = {
     onErrorContainer: '#991B1B',
 
     // Surfaces
-    background: '#F8FAFF',
-    onBackground: '#0F172A',
+    background: '#FFF7FB',
+    onBackground: '#3B0A26',
     surface: '#FFFFFF',
-    onSurface: '#0F172A',
-    surfaceVariant: '#DBEAFE',
-    onSurfaceVariant: '#334155',
-    surfaceDisabled: 'rgba(15, 23, 42, 0.12)',
-    onSurfaceDisabled: 'rgba(15, 23, 42, 0.38)',
+    onSurface: '#3B0A26',
+    surfaceVariant: '#FCE7F3',
+    onSurfaceVariant: '#6B214C',
+    surfaceDisabled: 'rgba(59, 10, 38, 0.12)',
+    onSurfaceDisabled: 'rgba(59, 10, 38, 0.38)',
 
     // Borders
-    outline: '#93C5FD',
-    outlineVariant: '#BFDBFE',
+    outline: '#F9A8D4',
+    outlineVariant: '#FBCFE8',
 
     // Inverse (Snackbar, tooltips)
-    inverseSurface: '#1E293B',
-    inverseOnSurface: '#F8FAFC',
-    inversePrimary: '#93C5FD',
+    inverseSurface: '#4A1232',
+    inverseOnSurface: '#FFF1F7',
+    inversePrimary: '#F9A8D4',
 
     // Misc
     shadow: '#000000',
@@ -56,11 +56,11 @@ export const paperTheme: MD3Theme = {
     // Elevation tints (Paper uses these for elevated surfaces)
     elevation: {
       level0: 'transparent',
-      level1: '#EFF6FF',
-      level2: '#DBEAFE',
-      level3: '#BFDBFE',
-      level4: '#93C5FD',
-      level5: '#60A5FA',
+      level1: '#FFF1F7',
+      level2: '#FCE7F3',
+      level3: '#FBCFE8',
+      level4: '#F9A8D4',
+      level5: '#F472B6',
     },
   },
 };
