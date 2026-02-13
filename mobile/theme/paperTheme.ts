@@ -6,48 +6,48 @@ export const paperTheme: MD3Theme = {
   colors: {
     ...MD3LightTheme.colors,
 
-    // Primary
-    primary: '#111111',
+    // Primary (orange-led brand)
+    primary: '#F97316',
     onPrimary: '#FFFFFF',
-    primaryContainer: '#E7E7E7',
-    onPrimaryContainer: '#111111',
+    primaryContainer: '#FFE2CC',
+    onPrimaryContainer: '#7A2E00',
 
     // Secondary
-    secondary: '#2B2B2B',
+    secondary: '#B45309',
     onSecondary: '#FFFFFF',
-    secondaryContainer: '#F1F1F1',
-    onSecondaryContainer: '#1A1A1A',
+    secondaryContainer: '#FFE9D6',
+    onSecondaryContainer: '#7C2D12',
 
     // Tertiary
-    tertiary: '#4A4A4A',
+    tertiary: '#C2410C',
     onTertiary: '#FFFFFF',
-    tertiaryContainer: '#EFEFEF',
-    onTertiaryContainer: '#1A1A1A',
+    tertiaryContainer: '#FFE8D8',
+    onTertiaryContainer: '#7C2D12',
 
-    // Error (kept in monochrome palette)
-    error: '#1F1F1F',
+    // Error
+    error: '#B00020',
     onError: '#FFFFFF',
-    errorContainer: '#EAEAEA',
-    onErrorContainer: '#111111',
+    errorContainer: '#F9DEDC',
+    onErrorContainer: '#410E0B',
 
     // Surfaces
-    background: '#FFFFFF',
-    onBackground: '#111111',
+    background: '#FFF9F5',
+    onBackground: '#2A1B12',
     surface: '#FFFFFF',
-    onSurface: '#111111',
-    surfaceVariant: '#F3F3F3',
-    onSurfaceVariant: '#4D4D4D',
-    surfaceDisabled: 'rgba(17, 17, 17, 0.12)',
-    onSurfaceDisabled: 'rgba(17, 17, 17, 0.38)',
+    onSurface: '#2A1B12',
+    surfaceVariant: '#F6E7DD',
+    onSurfaceVariant: '#6A5142',
+    surfaceDisabled: 'rgba(42, 27, 18, 0.12)',
+    onSurfaceDisabled: 'rgba(42, 27, 18, 0.38)',
 
     // Borders
-    outline: '#D1D1D1',
-    outlineVariant: '#E5E5E5',
+    outline: '#D8B8A3',
+    outlineVariant: '#EED9CB',
 
     // Inverse (Snackbar, tooltips)
-    inverseSurface: '#111111',
-    inverseOnSurface: '#FAFAFA',
-    inversePrimary: '#E0E0E0',
+    inverseSurface: '#3A2518',
+    inverseOnSurface: '#FFF8F3',
+    inversePrimary: '#FFB47F',
 
     // Misc
     shadow: '#000000',
@@ -56,11 +56,11 @@ export const paperTheme: MD3Theme = {
     // Elevation tints (Paper uses these for elevated surfaces)
     elevation: {
       level0: 'transparent',
-      level1: '#FCFCFC',
-      level2: '#F7F7F7',
-      level3: '#F0F0F0',
-      level4: '#EAEAEA',
-      level5: '#E3E3E3',
+      level1: '#FFF4EC',
+      level2: '#FFECDD',
+      level3: '#FFE4CE',
+      level4: '#FFDCBF',
+      level5: '#FFD3AF',
     },
   },
 };

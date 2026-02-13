@@ -65,7 +65,6 @@ function initializeSentry(): void {
   // Using hardcoded values from appifex-config.ts for reliability
   Sentry.setTags({
     appifex_project_id: APPIFEX_CONFIG.projectId,
-    appifex_session_id: APPIFEX_CONFIG.sessionId,
   });
 }
 
