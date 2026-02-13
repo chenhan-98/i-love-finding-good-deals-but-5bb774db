@@ -17,7 +17,6 @@
 
 interface AppifexConfig {
   projectId: string;
-  sessionId: string;
   sentryDsn: string;
   backendUrl: string;
 }
@@ -38,7 +37,7 @@ function sendTelemetry(
   data?: Record<string, unknown>
 ): void {
   try {
-    const { backendUrl, projectId, sessionId } = config;
+    const { backendUrl, projectId } = config;
 
     // Skip if no backend URL configured
     if (!backendUrl || backendUrl.includes('{{')) {
@@ -52,7 +51,6 @@ function sendTelemetry(
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         project_id: projectId,
-        session_id: sessionId || null,
         event_type: eventType,
         message,
         data: data || null,
@@ -75,7 +73,7 @@ function sendToSentry(
   config: AppifexConfig
 ): void {
   try {
-    const { sentryDsn, projectId, sessionId } = config;
+    const { sentryDsn, projectId } = config;
 
     // Parse DSN to get endpoint
     const dsnMatch = sentryDsn.match(/https:\/\/([^@]+)@([^\/]+)\/(\d+)/);
@@ -125,7 +123,6 @@ function sendToSentry(
       },
       tags: {
         appifex_project_id: projectId,
-        appifex_session_id: sessionId,
         handler: 'early',
         is_fatal: String(isFatal),
       },
@@ -263,7 +260,7 @@ function captureError(
 // Wrap entire initialization in try/catch to never crash the app
 try {
   // Load config safely
-  let config: AppifexConfig = { projectId: '', sessionId: '', sentryDsn: '', backendUrl: '' };
+  let config: AppifexConfig = { projectId: '', sentryDsn: '', backendUrl: '' };
 
   try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -279,7 +276,6 @@ try {
     // Send telemetry that config was loaded
     sendTelemetry('config_loaded', 'Appifex config loaded', config, {
       has_project_id: !!config.projectId && !config.projectId.includes('{{'),
-      has_session_id: !!config.sessionId && !config.sessionId.includes('{{'),
       has_sentry_dsn: !!config.sentryDsn && !config.sentryDsn.includes('{{'),
       has_backend_url: !!config.backendUrl && !config.backendUrl.includes('{{'),
     });

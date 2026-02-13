@@ -14,7 +14,6 @@
 
 interface AppifexConfig {
   readonly projectId: string;
-  readonly sessionId: string;
   readonly sentryDsn: string;
   readonly backendUrl: string;
 }
@@ -27,8 +26,6 @@ function createAppifexConfig(): AppifexConfig {
   const config = {
     /** Links this app to an Appifex project */
     projectId: '5bb774db-183c-4bef-99cd-d03cc97e7518',
-    /** Links this deployment to a development session */
-    sessionId: '77327cd4-3c3b-483d-a2e0-85c47f2310c2',
     /** Sentry DSN for centralized error monitoring */
     sentryDsn: '',
     /** Appifex backend URL for telemetry */
@@ -37,7 +34,7 @@ function createAppifexConfig(): AppifexConfig {
 
   // Validation: warn if template placeholders weren't replaced
   // This helps catch deployment configuration issues
-  if (config.projectId.indexOf('{{') !== -1 || config.sessionId.indexOf('{{') !== -1) {
+  if (config.projectId.indexOf('{{') !== -1) {
     console.warn(
       '⚠️ Appifex metadata contains template placeholders - deployment may be misconfigured.\n' +
       'Error tracking may not work correctly. Check deployment logs for env injection errors.'
@@ -45,7 +42,7 @@ function createAppifexConfig(): AppifexConfig {
   }
 
   // Validation: warn if values are empty (shouldn't happen with proper deployment)
-  if (!config.projectId || !config.sessionId) {
+  if (!config.projectId) {
     console.warn(
       '⚠️ Appifex metadata is empty - error tracking may not work.\n' +
       'Errors will still be captured by Sentry but may not appear in the Appifex dashboard.'
@@ -55,7 +52,6 @@ function createAppifexConfig(): AppifexConfig {
   // Debug: Log config values on startup (masked for security)
   console.log('[Appifex Config] Loaded:', {
     projectId: config.projectId.length > 8 ? config.projectId.substring(0, 8) + '...' : config.projectId,
-    sessionId: config.sessionId.length > 8 ? config.sessionId.substring(0, 8) + '...' : config.sessionId,
     hasDsn: !!config.sentryDsn && config.sentryDsn.length > 10,
     isTemplate: config.projectId.includes('{{'),
   });
