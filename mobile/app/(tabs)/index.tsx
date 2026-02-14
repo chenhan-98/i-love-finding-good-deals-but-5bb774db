@@ -90,7 +90,7 @@ export default function DiscoverScreen() {
       setLoading(true);
       await refreshDeals();
       await loadDeals();
-      setSnackbarText('Fresh deals pulled from marketplaces.');
+      setSnackbarText('Fresh deals pulled from marketplaces 🎉');
     } catch {
       setSnackbarText('Could not refresh deals right now.');
     } finally {
@@ -107,11 +107,11 @@ export default function DiscoverScreen() {
           updated.delete(deal.id);
           return updated;
         });
-        setSnackbarText('Removed from saved deals.');
+        setSnackbarText('Removed from saved deals 💨');
       } else {
         await addFavorite(deal.id);
         setFavoriteIds((prev) => new Set([...prev, deal.id]));
-        setSnackbarText('Deal saved to favorites.');
+        setSnackbarText('Deal saved to favorites 💖');
       }
     } catch {
       setSnackbarText('Unable to update favorites.');
@@ -125,7 +125,7 @@ export default function DiscoverScreen() {
       await Share.share({ message });
       await recordShare({ deal_id: deal.id, channel: 'native_share', message });
     } catch {
-      setSnackbarText('Share failed. Try again.');
+      setSnackbarText('Share failed. Try again 😅');
     }
   };
 
@@ -141,22 +141,22 @@ export default function DiscoverScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]} edges={['top']}>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <Text variant="headlineMedium" style={styles.heroTitle}>
-          Deal Radar
+          Deal Radar 🛍️
         </Text>
         <Text variant="bodyMedium" style={[styles.heroSubtitle, { color: theme.colors.onSurfaceVariant }]}>
-          Scan Walmart, Target, and Amazon in one stream. Filter smarter, save faster.
+          Scan Walmart, Target, and Amazon in one stream ✨ Filter smarter, save faster.
         </Text>
 
         <Searchbar
           value={search}
           onChangeText={setSearch}
-          placeholder="Search products, brands, and categories"
+          placeholder="🔎 Search products, brands, and categories"
           style={styles.searchBar}
         />
 
         <View style={styles.section}>
           <Text variant="titleSmall" style={styles.sectionTitle}>
-            Marketplace
+            Marketplace 🏬
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalFilters}>
             <View style={styles.chipRow}>
@@ -176,7 +176,7 @@ export default function DiscoverScreen() {
 
         <View style={styles.section}>
           <Text variant="titleSmall" style={styles.sectionTitle}>
-            Category
+            Category 🗂️
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalFilters}>
             <View style={styles.chipRow}>
@@ -196,7 +196,7 @@ export default function DiscoverScreen() {
 
         <View style={styles.section}>
           <Text variant="titleSmall" style={styles.sectionTitle}>
-            Min Discount
+            Min Discount 🔖
           </Text>
           <View style={styles.chipRow}>
             {discountLevels.map((level) => (
@@ -208,7 +208,7 @@ export default function DiscoverScreen() {
         </View>
 
         <Button mode="contained" onPress={onRefreshDeals} style={styles.refreshButton}>
-          <Text>Refresh Marketplace Deals</Text>
+          <Text>Refresh Marketplace Deals 🔄</Text>
         </Button>
 
         {loading ? (
