@@ -65,7 +65,7 @@ export default function DiscoverScreen() {
       setLoading(true);
       await Promise.all([loadCategories(), loadDeals(), loadFavorites()]);
     } catch {
-      setSnackbarText('Unable to load deals right now.');
+      setSnackbarText('Oops 😅 Unable to load deals right now.');
     } finally {
       setLoading(false);
     }
@@ -78,7 +78,7 @@ export default function DiscoverScreen() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      loadDeals().catch(() => setSnackbarText('Failed to update search results.'));
+      loadDeals().catch(() => setSnackbarText('Search update hiccup 🔎. Please try again.'));
     }, 280);
 
     return () => clearTimeout(timeout);
@@ -92,7 +92,7 @@ export default function DiscoverScreen() {
       await loadDeals();
       setSnackbarText('Fresh deals pulled from marketplaces 🎉');
     } catch {
-      setSnackbarText('Could not refresh deals right now.');
+      setSnackbarText('Could not refresh deals right now 😕');
     } finally {
       setLoading(false);
     }
@@ -114,7 +114,7 @@ export default function DiscoverScreen() {
         setSnackbarText('Deal saved to favorites 💖');
       }
     } catch {
-      setSnackbarText('Unable to update favorites.');
+      setSnackbarText('Unable to update favorites right now 😬');
     }
   };
 
@@ -125,7 +125,7 @@ export default function DiscoverScreen() {
       await Share.share({ message });
       await recordShare({ deal_id: deal.id, channel: 'native_share', message });
     } catch {
-      setSnackbarText('Share failed. Try again 😅');
+      setSnackbarText('Share failed 📤. Try again.');
     }
   };
 
@@ -133,7 +133,7 @@ export default function DiscoverScreen() {
     try {
       await Linking.openURL(deal.product_url);
     } catch {
-      setSnackbarText('Unable to open the deal link.');
+      setSnackbarText('Unable to open the deal link 🔗');
     }
   };
 
